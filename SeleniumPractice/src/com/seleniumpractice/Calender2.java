@@ -17,9 +17,12 @@ public class Calender2 {
 
 		String dateTime = "12/07/2014 2:00 PM";
 		
-		System.setProperty("webdriver.chrome.driver", "E:\\Automation\\practice\\FBTesting\\Drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		driver.get("http://demos.telerik.com/kendo-ui/datetimepicker/index");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

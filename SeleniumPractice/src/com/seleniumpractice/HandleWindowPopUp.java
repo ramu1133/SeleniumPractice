@@ -2,6 +2,7 @@ package com.seleniumpractice;
 
 import java.util.Iterator;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,9 +16,13 @@ public class HandleWindowPopUp {
 		//2. File Upload pop up -- Browse Button (type = file, sendKeys(path)
 		//3. Browser Window Popup - Advertisement pop up (windowHandler API - getWindowHandles() )
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/naveenkhunteta/Downloads/chromedriver");	
-		WebDriver driver = new ChromeDriver(); //launch chrome
-		
+		System.setProperty("webdriver.chrome.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
 		driver.get("http://www.popuptest.com/goodpopups.html");
 		
 		driver.findElement(By.xpath("html/body/table[2]/tbody/tr/td/font/b/a[3]")).click();

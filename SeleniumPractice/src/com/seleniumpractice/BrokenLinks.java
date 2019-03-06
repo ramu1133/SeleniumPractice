@@ -37,8 +37,11 @@ public class BrokenLinks {
 			WebElement element = links.get(i);
 			
 			String url = element.getAttribute("href");
+		
 			verifyLink(url);
 		}
+		
+		driver.quit();
 	}
 
 	public static void verifyLink(String urlLink) throws IOException
@@ -49,8 +52,7 @@ public class BrokenLinks {
 			httpConn.connect();
 			if (httpConn.getResponseCode() == 200) {
 				System.out.println(urlLink + " - " + httpConn.getResponseMessage());
-			}
-			if (httpConn.getResponseCode() == 404) {
+			}else if (httpConn.getResponseCode() == 404) {
 				System.out.println(urlLink + " - " + httpConn.getResponseMessage());
 			}
 

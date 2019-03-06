@@ -1,46 +1,36 @@
 package com.seleniumpractice;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverBasics {
 
 	public static void main(String[] args) {
 
-		
-		//1. FF browser:
-		//geckodriver
-			// C:\\downloads\\geckodriver.exe -- windows 
-	//	System.setProperty("webdriver.gecko.driver", "/Users/naveenkhunteta/Downloads/geckodriver");	
-	  //  WebDriver driver = new FirefoxDriver(); //launch FF
-		
-	    
-	    //2. chrome browser:
-		System.setProperty("webdriver.chrome.driver", "/Users/naveenkhunteta/Downloads/chromedriver");	
-		WebDriver driver = new ChromeDriver(); //launch chrome
-		driver.get("http://www.google.com");	//enter url
-		
-		String title = driver.getTitle(); //get title
-		
+		System.setProperty("webdriver.chrome.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+		driver.get("http://www.google.com");
+
+		String title = driver.getTitle();
 		System.out.println(title);
-		
-		//validation point:
-		if(title.equals("Google")){
+
+		if (title.equals("Google")) {
 			System.out.println("correct title");
-		}
-		else{
+		} else {
 			System.out.println("in-correct title");
 		}
-	   
-		
+
 		System.out.println(driver.getCurrentUrl());
-		
-		//System.out.println(driver.getPageSource());
-		
-		driver.quit(); //quit the browser
-		
-		
+
+		driver.quit(); 
+
 	}
 
 }

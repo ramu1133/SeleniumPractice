@@ -40,28 +40,26 @@ public class Calander {
 		}
 		
 		//         // *[@id="rb-calendar_onward_cal"]/table/tbody/tr[6]/td[2]
-
+		
 		String beforeXpath = "//*[@id='rb-calendar_onward_cal']/table/tbody/tr[";
 		String afterXpath = "]/td[";
 		
 		for (int rowNum = 3; rowNum <= 7; rowNum++) 
 		{
 			for (int colNum = 1; colNum <= 7; colNum++)
-			{		
-				
+			{					
 				String val = driver.findElement(By.xpath(beforeXpath+rowNum+afterXpath+colNum+"]")).getText();
+				
 				if(val == datesplit[0])
 				{
 					driver.findElement(By.xpath(beforeXpath+rowNum+afterXpath+colNum+"]")).click();
 				}
-				
-			
 			}
 		}
 		
 		driver.findElement(By.xpath("//*[@id='search_btn']")).click();
 		
-		driver.quit();
+	//	driver.quit();
 
 	}
 

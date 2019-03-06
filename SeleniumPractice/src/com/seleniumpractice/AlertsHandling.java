@@ -20,7 +20,7 @@ public class AlertsHandling {
 
 		driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
 
-		driver.findElement(By.name("proceed")).click(); // click on Go btn
+		driver.findElement(By.name("proceed")).click(); 
 
 		Thread.sleep(5000);
 
@@ -34,9 +34,7 @@ public class AlertsHandling {
 			System.out.println("in-correct alert messg");
 		}
 
-		alert.accept(); // click on OK btn
-
-		// alert.dismiss(); //click on cancel btn
+		alert.accept(); 
 		
 		driver.close();		
 

@@ -10,17 +10,13 @@ public class CustomXpath {
 
 	public static void main(String[] args) {
 
-System.setProperty("webdriver.chrome.driver", "/Users/naveenkhunteta/Downloads/chromedriver");	
-		
-		WebDriver driver = new ChromeDriver(); //launch chrome
-		
-		driver.manage().window().maximize(); //maximize window
-		driver.manage().deleteAllCookies(); //delete all the cookies
-		
-		//dynamic wait
+		System.setProperty("webdriver.chrome.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
 		driver.get("http://www.half.ebay.com"); //enter URL
 
 		//absolute xpath: not recommended

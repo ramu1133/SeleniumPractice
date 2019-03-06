@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class TakeScreenshot {
 
 	public static void main(String[] args) throws IOException {
+		
 		System.setProperty("webdriver.chrome.driver", "E:\\Automation\\practice\\SeleniumPractice\\Drivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver(); // launch chrome
 		driver.manage().window().maximize();

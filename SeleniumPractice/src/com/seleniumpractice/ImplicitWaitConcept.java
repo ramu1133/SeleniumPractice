@@ -10,9 +10,9 @@ public class ImplicitWaitConcept {
 	public static void main(String[] args) {
 
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/naveenkhunteta/Downloads/chromedriver");	
+		System.setProperty("webdriver.chrome.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
 		
-		WebDriver driver = new ChromeDriver(); //launch chrome
 		driver.get("http://www.half.ebay.com"); //enter URL
 		
 		driver.manage().window().maximize(); //maximize window

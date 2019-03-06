@@ -20,8 +20,7 @@ public class ReadPropFile {
 
 		Properties prop = new Properties();
 
-		FileInputStream ip = new FileInputStream(
-				"/Users/naveenkhunteta/Documents/workspace/MorningSessions/src/SeleniumSessions/config.properties");
+		FileInputStream ip = new FileInputStream("C:\\Users\\RAMU\\git\\SeleniumPractice\\SeleniumPractice\\src\\com\\seleniumpractice\\config.properties");
 
 		prop.load(ip);
 
@@ -38,16 +37,16 @@ public class ReadPropFile {
 		System.out.println(browserName);
 
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "/Users/naveenkhunteta/Downloads/chromedriver");
-			driver = new ChromeDriver(); // launch chrome
+			System.setProperty("webdriver.chrome.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\chromedriver.exe");
+			WebDriver driver = new ChromeDriver();
 		} 
 		else if(browserName.equals("FF")){
-			System.setProperty("webdriver.chrome.driver", "/Users/naveenkhunteta/Downloads/geckodriver");
-			driver = new FirefoxDriver();
+			System.setProperty("webdriver.chrome.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\geckodriver.exe");
+			WebDriver driver = new FirefoxDriver();
 		}
 		else if(browserName.equals("IE")){
-			System.setProperty("webdriver.chrome.driver", "/Users/naveenkhunteta/Downloads/internetexplorerdriver");
-			driver = new InternetExplorerDriver();
+			System.setProperty("webdriver.chrome.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\IEDriverServer.exe");
+			WebDriver driver = new InternetExplorerDriver();
 		}
 		
 		driver.get(url);
