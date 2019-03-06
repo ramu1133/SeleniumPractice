@@ -1,0 +1,10 @@
+<menu>
+     
+      <username_xpath>//input[@id='email']</username_xpath>  
+      <password_xpath>//input[@id='pass']</password_xpath>      
+      <loginbtn_xpath>//input[@type='submit']</loginbtn_xpath>
+      
+      <username> anjaneyulu.b.ram@gmail.com</username> 
+      <password> r@m@nj@neyulu </password>     
+
+</menu>
