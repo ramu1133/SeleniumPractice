@@ -18,9 +18,9 @@ public class HandleDropBox {
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-		driver.get("https://scgi.half.ebay.com/ws/eBayISAPI.dll?RegisterEnterInfo&usage=2943&ru=");	//enter url
+		driver.get("https://scgi.half.ebay.com/ws/eBayISAPI.dll?RegisterEnterInfo&usage=2943&ru=");	
 		
-		//handle drop box:
+		//handle dropdown box:
 		Select select = new Select(driver.findElement(By.id("state")));
 		select.selectByVisibleText("California");
 		

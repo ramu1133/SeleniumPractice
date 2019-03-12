@@ -20,24 +20,22 @@ public class GoogleSearchTest {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		driver.get("http://www.google.com");
-		
-		driver.findElement(By.id("lst-ib")).sendKeys("Java");
-		
-		List<WebElement> list = driver.findElements(By.xpath("//ul[@role='listbox']//li/descendant::div[@class='sbqs_c']"));
-		
+
+		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("Java");
+
+		List<WebElement> list = driver.findElements(By.xpath("//div[@class='suggestions-inner-container']"));
+
 		System.out.println("total number of suggestions in search box:::===>" + list.size());
-		
-		for(int i=0; i<list.size(); i++){
+
+		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).getText());
-			if(list.get(i).getText().contains("java tutorial")){
+			if (list.get(i).getText().contains("java tutorial")) {
 				list.get(i).click();
 				break;
 			}
-			
+
 		}
-		
-		
-		
+
 	}
 
 }

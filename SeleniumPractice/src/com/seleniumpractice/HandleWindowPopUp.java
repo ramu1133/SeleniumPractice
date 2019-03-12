@@ -12,10 +12,6 @@ public class HandleWindowPopUp {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		//1. alerts -- JavaScript Pop UP-- Alert API (accept, dismiss)
-		//2. File Upload pop up -- Browse Button (type = file, sendKeys(path)
-		//3. Browser Window Popup - Advertisement pop up (windowHandler API - getWindowHandles() )
-		
 		System.setProperty("webdriver.chrome.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -30,21 +26,19 @@ public class HandleWindowPopUp {
 		Thread.sleep(2000);
 		
 		Set<String> handler = driver.getWindowHandles();
-		
 		Iterator<String> it = handler.iterator();
 		
 		String parentWindowId = it.next();
-		System.out.println("parent window id:"+ parentWindowId);
-		
-		
+		System.out.println("parent window id: "+ parentWindowId);
+			
 		String childWindowId = it.next();
-		System.out.println("Child window id:"+childWindowId);
+		System.out.println("Child window id: "+childWindowId);
 		
 		driver.switchTo().window(childWindowId);
 		
 		Thread.sleep(2000);
 		
-		System.out.println("child window pop up title"+driver.getTitle());
+		System.out.println("child window pop up title : "+driver.getTitle());
 		
 		driver.close();
 		
@@ -52,10 +46,8 @@ public class HandleWindowPopUp {
 		
 		Thread.sleep(2000);
 		
-		System.out.println("parent window title"+driver.getTitle());
-		
-		
-		
+		System.out.println("parent window title : "+driver.getTitle());
+			
 	}
 
 }

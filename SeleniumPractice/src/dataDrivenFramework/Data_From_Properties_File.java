@@ -18,7 +18,7 @@ public class Data_From_Properties_File {
 	
 	public static void main(String[] args) throws IOException 
 	{				
-		String path="E://Automation//practice//SeleniumPractice//InputData//config.properties";
+		String path="C://Users//RAMU//git//SeleniumPractice//SeleniumPractice//InputData//config.properties";
 		File f = new File(path);
 		FileInputStream fis = new FileInputStream(f);
 		Properties properties=new Properties();
@@ -26,24 +26,24 @@ public class Data_From_Properties_File {
 				
 		String browsername = properties.getProperty("browser");
 		
-		if(browsername.equals("chrome")) 
-		{
-			System.setProperty("webdriver.chrome.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\chromedriver.exe");
-			driver = new ChromeDriver();
-		}
-		else if(browsername.equals("firefox")) 
-		{
-			System.setProperty("webdriver.gecko.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\geckodriver.exe");
-			driver = new FirefoxDriver();
-		}
-		else if(browsername.equals("IE"))
-		{
-			System.setProperty("webdriver.ie.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\IEDriverServer.exe");
-			driver = new InternetExplorerDriver();			
-		}		
+//		if(browsername.equals("chrome")) 
+//		{
+//			System.setProperty("webdriver.chrome.driver","C:\\Users\\RAMU\\git\\SeleniumPractice\\SeleniumPractice\\Drivers\\chromedriver.exe");
+//			driver = new ChromeDriver();
+//		}
+//		else if(browsername.equals("firefox")) 
+//		{
+//			System.setProperty("webdriver.gecko.driver","C:\\Users\\RAMU\\git\\SeleniumPractice\\SeleniumPractice\\Drivers\\geckodriver.exe");
+//			driver = new FirefoxDriver();
+//		}
+//		else if(browsername.equals("IE"))
+//		{
+//			System.setProperty("webdriver.ie.driver","C:\\Users\\RAMU\\git\\SeleniumPractice\\SeleniumPractice\\Drivers\\IEDriverServer.exe");
+//			driver = new InternetExplorerDriver();			
+//		}		
 		
-//		System.setProperty("webdriver.chrome.driver","E:\\Automation\\practice\\SeleniumPractice\\Drivers\\chromedriver.exe");
-//		driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\RAMU\\git\\SeleniumPractice\\SeleniumPractice\\Drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);

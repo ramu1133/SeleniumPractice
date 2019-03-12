@@ -20,17 +20,14 @@ public class MouseMovementConcept {
 
 		driver.get("http://spicejet.com/");
 		
-		Actions action = new Actions(driver);
-		
-		action.moveToElement(driver.findElement(By.linkText("About Us"))).build().perform();
+		Actions action = new Actions(driver);		
+		action.moveToElement(driver.findElement(By.xpath("//a[@id='ctl00_HyperLinkLogin']"))).build().perform();
 		
 		Thread.sleep(3000);
 		
-		driver.findElement(By.linkText("Fleet")).click();
+		driver.findElement(By.xpath("//div[@id='smoothmenu1']/ul/li[14]/ul/li[3]/a")).click();
 		
-		//a[contains(text(),'Sales')]
-		
-		
+		driver.quit();
 	}
 
 }
